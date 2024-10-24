@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Nunito:wght@300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+
+/*MENU*/
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;
+}
+.logo{
+    height: 180px;
+    width: 190px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 100px;
+    top: 60px;
+
+}
+/*al ternimar revisar a quien debo colocar el z-index al nav o al header*/
+nav{
+    background-color: rgb(110, 182, 245);
+    margin: auto;
+    font-size: 20px;
+}
+.menu-horizontal{
+    height: 100px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /*o cambiaelo por justify-content: space-around;*/
+    align-items: center;
+}
+.menu-horizontal > li > a{
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    transition: all .6s;
+}
+.menu:hover{
+    color: white;
+}
+.menu:after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    transition: all .8s;
+}
+.menu:hover:after {
+    width: 100%;
+    background: #fffbfb;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgb(110, 182, 245, .5);
+    transition: all .8s;
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical:hover{
+    background-color: rgb(110, 182, 245);
+}
+.menu-vertical li a{
+    text-decoration: none;
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 15px 15px 15px 20px;
+}
+/**/
+embed{
+    width: 90%;
+    height: calc(100vh - 100px);
+}

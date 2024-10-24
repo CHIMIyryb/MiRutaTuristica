@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Nunito:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Cedarville+Cursive&family=Nunito:wght@300;400;500;600&family=Oswald:wght@300&family=Roboto+Slab:wght@100;400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+/*MENU*/
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;
+}
+.logo{
+    height: 180px;
+    width: 190px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 100px;
+    top: 60px;
+
+}
+/*al ternimar revisar a quien debo colocar el z-index al nav o al header*/
+nav{
+    background-color: rgb(110, 182, 245);
+    margin: auto;
+    font-size: 20px;
+}
+.menu-horizontal{
+    height: 100px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /*o cambiaelo por justify-content: space-around;*/
+    align-items: center;
+}
+.menu-horizontal > li > a{
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    transition: all .6s;
+}
+.menu:hover{
+    color: white;
+}
+.menu:after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    transition: all .8s;
+}
+.menu:hover:after {
+    width: 100%;
+    background: #fffbfb;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgb(110, 182, 245, .5);
+    transition: all .8s;
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical:hover{
+    background-color: rgb(110, 182, 245);
+}
+.menu-vertical li a{
+    text-decoration: none;
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 15px 15px 15px 20px;
+}
+/**/
+/*titulo*/
+.title{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 45vh;
+	
+	text-transform: uppercase;
+}
+.title, h1{
+    font-family: 'Roboto Slab';
+    font-size: 70px;
+    color: white;
+}
+/*estilos de las imagenes*/
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 100px auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.container::after {
+	content: "";
+	width: 5px;
+	height: 100%;
+	background: #1b3231;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	z-index: 1;
+}
+
+.evento {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 200px;
+	position: relative;
+}
+
+.evento::after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+	background: #DCDFD9;
+	border: 2px solid #1b3231;
+	position: absolute;
+	z-index: 2;
+	top: calc(50% - 9px);
+	left: calc(50% - 9px);
+}
+
+.fecha {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	width: calc(42% + 20px);
+	font-size: 49px;
+	font-weight: normal;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.foto {
+	width: 42%;
+	border: 10px solid #fff;
+	position: relative;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.foto::after {
+	content: "";
+	display: block;
+	border: 20px solid transparent;
+	border-left: 20px solid #fff;
+	position: absolute;
+	right: -50px;
+	top: calc(50% - 20px);
+}
+
+.foto img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.evento:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+.evento:nth-child(even) .fecha {
+	justify-content: end;
+}
+
+.evento:nth-child(even) .foto::after {
+	content: "";
+	border: 20px solid transparent;
+	border-right: 20px solid #fff;
+	right: initial;
+	left: -50px;
+}
+/**/
+.link {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    }
+    .link:before,
+    .link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: #ffffff;
+    transition: left .8s;
+    }
+    .link:hover:before {
+    left: 0;
+    }
+    .link:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: -100%;
+    background: #ffffff;
+    transition: right .8s;
+    }
+    .link:hover:after {
+    right: 0;
+    }

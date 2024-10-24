@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Nunito:wght@300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito';
+}
+#s1{
+    height: 100vh;
+}
+body{
+    background-color: #ffffb041;
+}
+/*MENU*/
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;
+}
+.logo{
+    height: 180px;
+    width: 190px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 100px;
+    top: 60px;
+
+}
+/*al ternimar revisar a quien debo colocar el z-index al nav o al header*/
+nav{
+    background-color: rgb(110, 182, 245);
+    margin: auto;
+    font-size: 20px;
+}
+.menu-horizontal{
+    height: 100px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /*o cambiaelo por justify-content: space-around;*/
+    align-items: center;
+}
+.menu-horizontal > li > a{
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    transition: all .6s;
+}
+.menu:hover{
+    color: white;
+}
+.menu:after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    transition: all .8s;
+}
+.menu:hover:after {
+    width: 100%;
+    background: #fffbfb;
+}
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgb(110, 182, 245, .5);
+    transition: all .8s;
+}
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+.menu-vertical:hover{
+    background-color: rgb(110, 182, 245);
+}
+.menu-vertical li a{
+    text-decoration: none;
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 15px 15px 15px 20px;
+}
+/**/
+
+.texto{
+    width: 50%;
+    /* background-color: #fff; */
+  padding: 2rem 3rem;
+  color: #fff;
+  box-shadow: 0px 0px 25px #222;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  position: absolute;
+  top: 30%;
+}
+.titulo{
+    text-align: center;
+}
+.parrafo{
+    font-size: 20px;
+}
+/*imagenes del la primera de la s1*/
+#photo1{
+    height: 220px;
+    width: 320px;
+    transform: rotate(-15deg);
+    position: absolute;
+    top: 22%;
+    left: 52%;
+    border: 10px solid white;
+}
+#photo2{
+    height: 250px;
+    width: 400px;
+    position: absolute;
+    transform: rotate(10deg);
+    top: 44%;
+    left: 67%;
+    border: 10px solid white;
+}
+#photo3{
+    height: 200px;
+    width: 360px;
+    position: absolute;
+    transform: rotate(-8deg);
+    top: 65%;
+    left: 50%;
+    border: 10px solid white;
+}
+/*secciones del index*/
+
+.index-section{
+    font-size: 45px;
+}
+.parrafo-lugar{
+    width: 80%;
+    font-size: 1.1em;
+}
+/**/
+
+/*Tarjetas de los restaurantes*/
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+.container .card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    height: 300px;
+    background: #fff;
+    border: 1px solid #555;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+}
+.container .card:hover{
+    height: 350px;
+}
+.container .card .imgBX{
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.container .card:hover .imgBX{
+    top: -100px;
+    scale: .75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+.container .card .imgBX img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .card .content{
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    padding: 0 30px;
+    height: 30px;
+    overflow: hidden;
+    text-align: center;
+    transition: .5s;
+}
+.container .card:hover .content{
+    top: 130px;
+    height: 250px;
+}
+.container .card .content h2{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--clr);
+}
+.container .card .content p{
+    color: #333;
+    font-size: 1.05em;
+}
+.container .card .content a{
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--clr);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/**/
+
+/*Galeria de imagenes*/
+.container-img{
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    /*
+    margin-top: 60px;
+    margin-bottom: 60px;
+    */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px;
+    grid-gap: 20px;
+}
+.container-img .box-img figure{
+    width: 100%;
+    height: 100%;
+}
+.container-img .box-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container-img .box-img:nth-child(1){
+    grid-column-start: span 2;
+}
+.container-img .box-img:nth-child(4){
+    grid-row-start: span 2;
+}
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 35px;
+    text-shadow: 2px  0px 0px black,
+               0px  2px 0px black,
+              -2px  0px 0px black,
+               0px -2px 0px black;
+}
+/**/
+/*Slider de los lugares*/
+.slider{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background: #ccc;
+    margin: 0;
+    padding: 0;
+}
+.slider li{
+    list-style: none;
+    position: relative;
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid #000;
+    float: left;
+    box-sizing: border-box;
+    transition: .5s;
+    text-align: center;
+    overflow: hidden;
+}
+.slider li:nth-child(1){
+    background: url(../img/slider/mexcaltitlan.jpg);
+    background-size: cover;
+    background-position: left;
+}
+.slider li:nth-child(2){
+    background: url(../img/slider/mantanchen.jpg);
+    background-size: cover;
+    background-position: left;
+}
+.slider li:nth-child(3){
+    background: url(../img/slider/laguna.jpg);
+    background-size: cover;
+    background-position: left;
+}
+.slider li:nth-child(4){
+    background: url(../img/slider/gobierno.jpg);
+    background-size: cover;
+    background-position: left;
+}
+.slider li:nth-child(5){
+    background: url(../img/slider/santiago.jpg);
+    background-size: cover;
+    background-position: left;
+}
+.slider:hover li{
+    width: 10%;
+}
+.slider li:hover{
+    width: 60%;
+}
+.slider li .contenido{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+.slider li:hover .contenido{
+    bottom: 0;
+    transition: .3s;
+    transition-delay: .3s;
+    opacity: 1;
+}
+.box-img{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/**/
+/*footer*/
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #fff;
+}
+footer .container-footer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+footer .container-footer .sec h2{
+    position: relative;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+footer .container-footer .sec p{
+    color: #555;
+}
+footer .container-footer .sci{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+}
+footer .container-footer .sci li{
+    list-style: none;
+}
+footer .container-footer .sci li a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: #333;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+footer .container-footer .sci li a i{
+    color: #fff;
+    font-size: 20px;
+}
+footer .container-footer .quicklinks{
+    position: relative;
+}
+footer .container-footer .quicklinks ul li{
+    list-style: none;
+}
+footer .container-footer .quicklinks ul li a{
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+footer .container-footer .contact .info{
+    position: relative;
+}
+footer .container-footer .contact .info li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+footer .container-footer .contact .info li span{
+    color: #555;
+    font-size: 20px;
+}
+footer .container-footer .contact .info li a{
+    color: #555;
+    text-decoration: none;
+}
+.copyrightText{
+    width: 100%;
+    background: #fff;
+    padding: 20px 100px 30px;
+    text-align: center;
+    color: #555;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
